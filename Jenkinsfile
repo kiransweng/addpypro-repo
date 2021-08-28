@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('add') {
       steps {
-        bat(script: 'cd addpro\\src\\org\\programs', label: 'kiransys')
+        bat(script: 'cd addpro/src/org/programs', label: 'kiransys')
         bat(script: 'python Addition.py', label: 'kiransys')
       }
     }
