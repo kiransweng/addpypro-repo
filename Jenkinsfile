@@ -8,19 +8,24 @@ pipeline {
   stages {
     stage('add') {
       steps {
-        echo 'Sample'
+        bat(script: 'cd addpro\\src\\org\\programs', label: 'kiransys')
+        bat(script: 'python Addition.py', label: 'kiransys')
       }
     }
 
     stage('sub') {
       steps {
-        echo 'subtract'
+        git(url: 'https://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@github.com/kiransweng/subpypro-repo.git', branch: 'main')
+        bat(script: 'cd subpro\\src\\org\\programs', label: 'kiransys')
+        bat(script: 'python Substract.py', label: 'kiransys')
       }
     }
 
     stage('multi') {
       steps {
-        echo 'multiply'
+        git(url: 'https://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@github.com/kiransweng/multipypro-repo.git', branch: 'main')
+        bat(script: 'cd multipro\\src\\org\\programs', label: 'kiransys')
+        bat(script: 'python Multiply.py', label: 'kiransys')
       }
     }
 
