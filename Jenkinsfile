@@ -8,8 +8,8 @@ pipeline {
   stages {
     stage('add') {
       steps {
-        bat(script: 'cd addpro/src/org/programs', label: 'kiransys')
-        bat(script: 'python Addition.py', label: 'kiransys')
+        powershell(script: 'cd addpro/src/org/programs ', label: 'kiransys')
+        powershell(script: 'python Addition.py', label: 'kiransys')
       }
     }
 
