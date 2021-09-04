@@ -17,7 +17,7 @@ pipeline {
 
     stage('sub') {
       steps {
-        git(url: 'https://github.com/kiransweng/subpypro-repo.git', branch: 'main', credentialsId: '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-')
+        git(url: 'https://github.com/kiransweng/subpypro-repo.git', branch: 'main', credentialsId: 'kiransweng')
         dir(path: 'subpro\\src\\org\\programs')
         bat(script: 'python Substract.py', label: 'kiransys')
       }
