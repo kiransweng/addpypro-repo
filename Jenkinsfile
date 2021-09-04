@@ -25,5 +25,15 @@ pipeline {
       }
     }
 
+    stage('multi') {
+      steps {
+        git(url: 'https://github.com/kiransweng/multipypro-repo.git', branch: 'main', credentialsId: 'af366798-2ee9-4a5b-a0bc-57d11783f417')
+        dir(path: 'multipro\\src\\org\\programs') {
+          bat(script: 'python Multiply.py', label: 'kiransys')
+        }
+
+      }
+    }
+
   }
 }
